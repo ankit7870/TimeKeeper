@@ -55,6 +55,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         minCB = new javax.swing.JComboBox<>();
         ampmLB = new javax.swing.JLabel();
         minLB1 = new javax.swing.JLabel();
+        calendarBT = new javax.swing.JButton();
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -79,7 +80,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
                 swBTActionPerformed(evt);
             }
         });
-        getContentPane().add(swBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
+        getContentPane().add(swBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 100, -1));
 
         timerBT.setText("Timer");
         timerBT.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +88,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
                 timerBTActionPerformed(evt);
             }
         });
-        getContentPane().add(timerBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 80, 30));
+        getContentPane().add(timerBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 70, -1));
 
         ampmCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
         ampmCB.addActionListener(new java.awt.event.ActionListener() {
@@ -95,33 +96,41 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
                 ampmCBActionPerformed(evt);
             }
         });
-        getContentPane().add(ampmCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
+        getContentPane().add(ampmCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
 
         jButton1.setText("Set Alarm");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
         hrCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hrCBActionPerformed(evt);
             }
         });
-        getContentPane().add(hrCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        getContentPane().add(hrCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
         hrLB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(hrLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 50, 20));
+        getContentPane().add(hrLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 50, 20));
 
         minCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minCBActionPerformed(evt);
             }
         });
-        getContentPane().add(minCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        getContentPane().add(minCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
         ampmLB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(ampmLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 40, 20));
+        getContentPane().add(ampmLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 40, 20));
 
         minLB1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(minLB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 50, 20));
+        getContentPane().add(minLB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 50, 20));
+
+        calendarBT.setText("Calendar");
+        calendarBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calendarBTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(calendarBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +166,15 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
   
     }//GEN-LAST:event_ampmCBActionPerformed
 
+    private void calendarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calendarBTActionPerformed
     
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new myclock.Calendar().setVisible(true);
+            }       
+    }//GEN-LAST:event_calendarBTActionPerformed
+        );
+                }
    
 
     @Override
@@ -193,10 +210,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
                InputStream in;
                try{
              in=new FileInputStream(new File("src\\wav\\tone.wav"));
-              AudioStream as=new AudioStream(in);
-                 
-            AudioPlayer.player.start(as);            
-              AudioPlayer.player.stop(as); 
+             
                }
                catch(Exception e){
              e.printStackTrace();
@@ -213,6 +227,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ampmCB;
     private javax.swing.JLabel ampmLB;
+    private javax.swing.JButton calendarBT;
     private javax.swing.JLabel dateL;
     private javax.swing.JComboBox<String> hrCB;
     private javax.swing.JLabel hrLB;
