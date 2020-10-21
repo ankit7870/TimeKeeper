@@ -3,8 +3,7 @@ package myclock;
 import countdown.Timer1;
 
 import java.io.File;
-
-
+import java.applet.*;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Calendar;
@@ -49,12 +48,11 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         swBT = new javax.swing.JButton();
         timerBT = new javax.swing.JButton();
         ampmCB = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
         hrCB = new javax.swing.JComboBox<>();
         hrLB = new javax.swing.JLabel();
         minCB = new javax.swing.JComboBox<>();
         ampmLB = new javax.swing.JLabel();
-        minLB1 = new javax.swing.JLabel();
+        minLB = new javax.swing.JLabel();
         calendarBT = new javax.swing.JButton();
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -98,9 +96,6 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         });
         getContentPane().add(ampmCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
 
-        jButton1.setText("Set Alarm");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
-
         hrCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hrCBActionPerformed(evt);
@@ -121,8 +116,8 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         ampmLB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(ampmLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 40, 20));
 
-        minLB1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(minLB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 50, 20));
+        minLB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(minLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 50, 20));
 
         calendarBT.setText("Calendar");
         calendarBT.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +147,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_timerBTActionPerformed
 
     private void minCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minCBActionPerformed
-       hrLB.setText(""+minCB.getSelectedItem());
+       minLB.setText(""+minCB.getSelectedItem());
      amin=Integer.parseInt(hrLB.getText());
     }//GEN-LAST:event_minCBActionPerformed
 
@@ -183,6 +178,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
          try{
              Calendar c=Calendar.getInstance();
              hour=c.get(Calendar.HOUR_OF_DAY);
+             int h=hour;
              if(hour>12)
              {
                  hour=hour-12;
@@ -206,11 +202,21 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
                 timeL.setText(timestr+" PM");
             }
             dateL.setText(datestr);
+            
+            
            if(ahr==hour && amin==minute){
-               InputStream in;
+              
                try{
-             in=new FileInputStream(new File("src\\wav\\tone.wav"));
-             
+                  
+              File audioFile = new File("C:\\Users\\ANKIT\\Downloads\\Zaroori-Tha-Rahat-Fateh-Ali-Khan.mp3");
+ 
+AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+AudioFormat format = audioStream.getFormat();
+ 
+DataLine.Info info = new DataLine.Info(Clip.class, format);
+Clip audioClip = (Clip) AudioSystem.getLine(info);
+audioClip.open(audioStream);
+audioClip.start();
                }
                catch(Exception e){
              e.printStackTrace();
@@ -231,11 +237,10 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel dateL;
     private javax.swing.JComboBox<String> hrCB;
     private javax.swing.JLabel hrLB;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> minCB;
-    private javax.swing.JLabel minLB1;
+    private javax.swing.JLabel minLB;
     private javax.swing.JButton swBT;
     private javax.swing.JLabel timeL;
     private javax.swing.JButton timerBT;
