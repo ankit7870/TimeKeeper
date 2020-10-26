@@ -5,7 +5,7 @@ import myclock.DIGITAL_CLOCK;
 import stopwatch.STimer;
 
 public class Stopwatch extends javax.swing.JFrame {
-    int flag=0;
+    int flag=0;int count=0;
     
     STimer timer;
     Thread t;
@@ -186,9 +186,14 @@ public class Stopwatch extends javax.swing.JFrame {
     }//GEN-LAST:event_secTFActionPerformed
 
     private void startBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTActionPerformed
-        timer=new STimer(this);
+        
+        if(count==0)
+        {
+            timer=new STimer(this);
         t=new Thread(timer,"Ankit");
         t.start();
+        count=1;
+        }
     }//GEN-LAST:event_startBTActionPerformed
 
     private void pauseBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauseBTActionPerformed
@@ -211,8 +216,13 @@ public class Stopwatch extends javax.swing.JFrame {
     }//GEN-LAST:event_lapBTActionPerformed
 
     private void stopBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopBTActionPerformed
-        t.stop();
-        setTimer(0,0,0);
+        if(count==1){
+                timer.stop();
+                count=0;
+                flag=0;
+                 pauseBT.setText("Pause");
+                this.setTimer(0,0,0);
+        }
     }//GEN-LAST:event_stopBTActionPerformed
 
     private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
@@ -221,7 +231,7 @@ public class Stopwatch extends javax.swing.JFrame {
          abc.setVisible(true);
            
     }//GEN-LAST:event_backBTActionPerformed
-
+     
     public void setTimer(int min,int sec,int csec){
         minTF.setText(""+min);
         secTF.setText(""+sec);

@@ -2,7 +2,7 @@
 package myclock;
 
 
-public class digiclock {
+public class MyDigiclock {
     
      public static void main(String args[]) {
        DIGITAL_CLOCK mc=new DIGITAL_CLOCK();

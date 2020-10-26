@@ -35,7 +35,7 @@ public class STimer implements Runnable{
             System.out.println(e.getMessage());
         }
     }
-    public void stop(){
+   public void stop(){
         status=false;
         
     }
