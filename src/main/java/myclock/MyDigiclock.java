@@ -9,6 +9,7 @@ public class MyDigiclock {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
+                
                 mc.setVisible(true);
             }
            
