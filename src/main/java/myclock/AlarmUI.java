@@ -29,7 +29,7 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
     }
      static int amin,ahr,hour,minute,count;
       int flag=0; static int resp=0;    
-           
+      Thread k;     
              
              
     @SuppressWarnings("unchecked")
@@ -185,24 +185,47 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
         
         if(flag==0){
         Runnable r1=new CheckAlarm();
-     Thread k=new Thread(r1);
+     k=new Thread(r1);
      k.start();
       String message=messTF.getText();
     if(amin==minute && ahr==hour){
-        flag++;
+       
         int response=JOptionPane.showConfirmDialog(this,"Snooze Alarm??",message,JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
         if(response==JOptionPane.YES_OPTION){
-            System.out.print("acbxvx");
+            
+             resp=1;
+        }
+        else if(response==JOptionPane.NO_OPTION){
+            
+        }
+        }
+    flag=1;
+    }
+
+        
+        else if(flag==1){
+            
+            resp=1;
+            
+            flag=2;
+        }
+        else if(flag==2){
+            CheckAlarm.count=0;
+            resp=0;
+               String message=messTF.getText();
+    if(amin==minute && ahr==hour){
+       
+        int response=JOptionPane.showConfirmDialog(this,"Snooze Alarm??",message,JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(response==JOptionPane.YES_OPTION){
+            
              resp=1; 
         }
         else if(response==JOptionPane.NO_OPTION){
             
         }
-        
-    }
-   
+    }   flag=1;
         }
-     // TODO add your handling code here:
+     // TODOfla add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
   
@@ -227,7 +250,7 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
              Calendar c=Calendar.getInstance();
              hour=c.get(Calendar.HOUR_OF_DAY);
              
-             if(hour>12)
+             if(hour>=12)
              {
                  hour=hour-12;
                  count=1;
