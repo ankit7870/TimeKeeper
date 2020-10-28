@@ -26,18 +26,12 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
         timeL = new javax.swing.JLabel();
         dateL = new javax.swing.JLabel();
-        swBT = new javax.swing.JButton();
         timerBT = new javax.swing.JButton();
         calendarBT = new javax.swing.JButton();
         setalarmBT = new javax.swing.JButton();
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        swBT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,14 +45,6 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         dateL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dateL.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(dateL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 130, 40));
-
-        swBT.setText("Stopwatch");
-        swBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                swBTActionPerformed(evt);
-            }
-        });
-        getContentPane().add(swBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 100, -1));
 
         timerBT.setText("Timer");
         timerBT.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +69,15 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
             }
         });
         getContentPane().add(setalarmBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+
+        swBT.setText("Stopwatch");
+        swBT.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        swBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                swBTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(swBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 100, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,8 +168,6 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calendarBT;
     private javax.swing.JLabel dateL;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JButton setalarmBT;
     private javax.swing.JButton swBT;
     private javax.swing.JLabel timeL;

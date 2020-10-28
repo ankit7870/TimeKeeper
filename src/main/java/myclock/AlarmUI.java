@@ -27,9 +27,9 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
                 minCB.addItem(""+i);
         }
     }
-     static int amin,ahr,hour,minute,count;
-      int flag=0; static int resp=0;    
-      Thread k;     
+     static int amin,ahr,hour,minute,count;String message;
+      int flag=0; static int resp=0; int on=0;   
+      Thread k;   int check=0;  
              
              
     @SuppressWarnings("unchecked")
@@ -187,45 +187,28 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
         Runnable r1=new CheckAlarm();
      k=new Thread(r1);
      k.start();
-      String message=messTF.getText();
-    if(amin==minute && ahr==hour){
-       
-        int response=JOptionPane.showConfirmDialog(this,"Snooze Alarm??",message,JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
-        if(response==JOptionPane.YES_OPTION){
-            
-             resp=1;
-        }
-        else if(response==JOptionPane.NO_OPTION){
-            
-        }
-        }
+     
+      message=messTF.getText();
+     on=1;
+     
     flag=1;
     }
 
         
         else if(flag==1){
-            
+           check=1;
             resp=1;
-            
+            on=0;
             flag=2;
         }
         else if(flag==2){
+            on=1;
+            check=0;
             CheckAlarm.count=0;
             resp=0;
-               String message=messTF.getText();
-    if(amin==minute && ahr==hour){
-       
-        int response=JOptionPane.showConfirmDialog(this,"Snooze Alarm??",message,JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
-        if(response==JOptionPane.YES_OPTION){
-            
-             resp=1; 
+      flag=1;
         }
-        else if(response==JOptionPane.NO_OPTION){
-            
-        }
-    }   flag=1;
-        }
-     // TODOfla add your handling code here:
+    
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
   
@@ -256,13 +239,32 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
                  count=1;
              }
              minute=c.get(Calendar.MINUTE);
+                        String message=messTF.getText();
+                        
+                            
+    if(AlarmUI.amin==AlarmUI.minute && AlarmUI.ahr==AlarmUI.hour && on==1 && check==0){
+     
+        int response=JOptionPane.showConfirmDialog(this,"Snooze Alarm??",message,JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(response==JOptionPane.YES_OPTION){
             
+             resp=1;
+        }
+        else if(response==JOptionPane.NO_OPTION){
+            
+        }
+       
+        check=1;
+    }
            
          }
          catch(Exception e){
              e.printStackTrace();
          }
+            
      }
        
     }
-}
+
+    }
+    
+
