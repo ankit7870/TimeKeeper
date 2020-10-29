@@ -18,7 +18,7 @@ public class CheckAlarm implements Runnable{
         {  
             while(status){
                 
-                if(AlarmUI.amin==AlarmUI.minute && AlarmUI.ahr==AlarmUI.hour){
+                if(AlarmUI.amin==AlarmUI.minute && AlarmUI.ahr==AlarmUI.hour && AlarmUI.counter==AlarmUI.AM){
                      if(count==0){
                          
             filePath = "C:\\Users\\ANKIT\\Downloads\\tone.wav"; 

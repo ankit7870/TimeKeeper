@@ -201,12 +201,14 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
             resp=1;
             on=0;
             flag=2;
+            k.suspend();
         }
         else if(flag==2){
             on=1;
             check=0;
             CheckAlarm.count=0;
             resp=0;
+            k.resume();
       flag=1;
         }
     
@@ -242,12 +244,16 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
              minute=c.get(Calendar.MINUTE);
                         String message=messTF.getText();
                          
-                       /*   if(ampmLB.getText()=="PM"){
+                        if(ampmLB.getText().equals("PM")){
                               AM=1;
-                          }*/
+                          }
+                        else
+                        {
+                            AM=0;
+                        }
                           
                             
-    if(AlarmUI.amin==AlarmUI.minute && AlarmUI.ahr==AlarmUI.hour && on==1 && check==0){
+    if(AlarmUI.amin==AlarmUI.minute && AlarmUI.ahr==AlarmUI.hour && on==1 && check==0 && AlarmUI.counter==AlarmUI.AM){
      
         int response=JOptionPane.showConfirmDialog(this,"Snooze Alarm??",message,JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
         if(response==JOptionPane.YES_OPTION){
