@@ -19,7 +19,7 @@ public class SimpleAudioPlayer
     String status; 
       
     AudioInputStream audioInputStream; 
-    static String filePath; 
+    public static String filePath; 
   
     // constructor to initialize streams and clip 
     public SimpleAudioPlayer() 
@@ -86,11 +86,9 @@ public class SimpleAudioPlayer
     { 
         if (status.equals("paused"))  
         { 
-            System.out.println("audio is already paused"); 
             return; 
         } 
-        this.currentFrame =  
-        this.clip.getMicrosecondPosition(); 
+        
         clip.stop(); 
         status = "paused"; 
     } 

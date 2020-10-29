@@ -1,9 +1,8 @@
 
 package myclock;
 
-import java.util.Scanner;
+import static myclock.AlarmUI.counter;
 import static myclock.SimpleAudioPlayer.filePath;
-import javax.swing.JOptionPane;
 
 public class CheckAlarm implements Runnable{
     

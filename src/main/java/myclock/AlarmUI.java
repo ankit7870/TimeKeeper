@@ -27,9 +27,9 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
                 minCB.addItem(""+i);
         }
     }
-     static int amin,ahr,hour,minute,count;String message;
+     static int amin,ahr,hour,minute,counter;String message;
       int flag=0; static int resp=0; int on=0;   
-      Thread k;   int check=0;  
+      Thread k;   int check=0; static  int AM=0;
              
              
     @SuppressWarnings("unchecked")
@@ -162,6 +162,7 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
 
     private void ampmCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ampmCBActionPerformed
         ampmLB.setText(""+ampmCB.getSelectedItem());
+        
 
     }//GEN-LAST:event_ampmCBActionPerformed
 
@@ -236,11 +237,15 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
              if(hour>=12)
              {
                  hour=hour-12;
-                 count=1;
+                 counter=1;
              }
              minute=c.get(Calendar.MINUTE);
                         String message=messTF.getText();
-                        
+                         
+                       /*   if(ampmLB.getText()=="PM"){
+                              AM=1;
+                          }*/
+                          
                             
     if(AlarmUI.amin==AlarmUI.minute && AlarmUI.ahr==AlarmUI.hour && on==1 && check==0){
      

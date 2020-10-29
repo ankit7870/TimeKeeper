@@ -39,12 +39,12 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         timeL.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         timeL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         timeL.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(timeL, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 290, 70));
+        getContentPane().add(timeL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 290, 70));
 
         dateL.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         dateL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dateL.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(dateL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 130, 40));
+        getContentPane().add(dateL, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 130, 40));
 
         timerBT.setText("Timer");
         timerBT.addActionListener(new java.awt.event.ActionListener() {
