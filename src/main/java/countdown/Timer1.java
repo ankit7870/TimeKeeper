@@ -177,7 +177,7 @@ public class Timer1 extends javax.swing.JFrame {
                     
                      if(count==0){
                          
-           SimpleAudioPlayer.filePath = "C:\\Users\\ANKIT\\Downloads\\tone.wav"; 
+           SimpleAudioPlayer.filePath = "C:\\Users\\ANKIT\\Downloads\\birds.wav"; 
             audioPlayer1 =new SimpleAudioPlayer(); 
           
            audioPlayer1.play();

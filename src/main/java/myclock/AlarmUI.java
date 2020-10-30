@@ -178,6 +178,7 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
 
     private void BackBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBTActionPerformed
    this.setVisible(false);
+   
          DIGITAL_CLOCK abc=new DIGITAL_CLOCK();
          abc.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_BackBTActionPerformed
@@ -259,6 +260,7 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
         if(response==JOptionPane.YES_OPTION){
             
              resp=1;
+             
         }
         else if(response==JOptionPane.NO_OPTION){
             
