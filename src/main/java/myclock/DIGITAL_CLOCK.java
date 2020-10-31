@@ -32,16 +32,22 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         calendarBT = new javax.swing.JButton();
         setalarmBT = new javax.swing.JButton();
         swBT = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CLOCK");
+        setBackground(new java.awt.Color(0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        timeL.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
+        timeL.setFont(new java.awt.Font("Digital-7", 1, 36)); // NOI18N
+        timeL.setForeground(new java.awt.Color(255, 255, 255));
         timeL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         timeL.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(timeL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 290, 70));
 
-        dateL.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        dateL.setFont(new java.awt.Font("Digital-7", 1, 24)); // NOI18N
+        dateL.setForeground(new java.awt.Color(255, 255, 255));
         dateL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dateL.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(dateL, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 130, 40));
@@ -78,6 +84,9 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
             }
         });
         getContentPane().add(swBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 100, 20));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,6 +177,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calendarBT;
     private javax.swing.JLabel dateL;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton setalarmBT;
     private javax.swing.JButton swBT;
     private javax.swing.JLabel timeL;
