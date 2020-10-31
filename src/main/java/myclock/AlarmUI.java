@@ -28,7 +28,7 @@ public class AlarmUI extends javax.swing.JFrame implements Runnable{
         }
     }
      static int amin,ahr,hour,minute,counter;String message;
-      int flag=0; static int resp=0; int on=0;   
+      int flag=0; static int resp=0;static int on=0;   
       Thread k;   int check=0; static  int AM=0;
              
              

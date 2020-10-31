@@ -49,7 +49,7 @@ public class DIGITAL_CLOCK extends javax.swing.JFrame implements Runnable{
         dateL.setFont(new java.awt.Font("Digital-7", 1, 24)); // NOI18N
         dateL.setForeground(new java.awt.Color(255, 255, 255));
         dateL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dateL.setBorder(new javax.swing.border.MatteBorder(null));
+        dateL.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
         getContentPane().add(dateL, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 130, 40));
 
         timerBT.setText("Timer");
