@@ -35,7 +35,7 @@ public class Stopwatch extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         stopBT.setText("Stop");
         stopBT.addActionListener(new java.awt.event.ActionListener() {
